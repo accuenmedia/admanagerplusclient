@@ -80,7 +80,7 @@ class Base:
         return r
 
     def generate_curl_command(self, method, url, headers, data=None):
-        command = "curl -v -H {headers} {data} -X {method} {uri}"
+        command = 'curl -v -H {headers} {data} -X {method} "{uri}"'
         
         header_list = ['"{0}: {1}"'.format(k, v) for k, v in headers.items()]
         header = " -H ".join(header_list)
