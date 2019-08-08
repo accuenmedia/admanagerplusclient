@@ -5,7 +5,7 @@ setup(
     version='0.9.2',
     author='Jim Barcelona',
     author_email='barce@me.com',
-    packages=['admanagerplusclient', 'admanagerplusclient.tests'],
+    packages=['admanagerplusclient'],
     install_requires=[
       'future',
     ],
@@ -13,6 +13,6 @@ setup(
     url='http://pypi.python.org/pypi/admanagerplusclient/',
     license='LICENSE',
     description='A client for interacting with the Ad Manager Plus Platform.',
-    long_description=open('README.txt').read(),
+    long_description=open('README.md').read(),
 )
  

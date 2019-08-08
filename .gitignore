@@ -102,3 +102,9 @@ ENV/
 
 # vim swp files
 *.sw*
+
+# vscode
+.vscode
+
+# local dev
+config.py
