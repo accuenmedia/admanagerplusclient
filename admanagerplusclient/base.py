@@ -35,7 +35,7 @@ class Base:
         else:
             response_json['msg_type'] = 'success'
             # display the error message that comes back from request
-            response_json['msg'] = ''
+            response_json['msg'] = 'Success'
             response_json['data'] = results_json
             response_json['response_code'] = r.status_code
 
