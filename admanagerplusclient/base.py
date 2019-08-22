@@ -48,7 +48,7 @@ class Base:
         if method_type == 'POST':
             r = requests.post(url, headers=self.headers, verify=False, params=params, data=json.dumps(data))
         if method_type == 'PUT':
-            r = requests.put(url, headers=self.headers, verify=False, params=params, data=json.dumps(data))
+            r = requests.put(url, headers=self.headers, verify=False, params=params, json=data)
 
         results_json = r.json()
 
