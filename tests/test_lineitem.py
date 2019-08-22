@@ -42,12 +42,13 @@ class LineItemTestCase(unittest.TestCase):
             'budgetType': line_data["budgetType"],
             'dailyBudgetType': line_data["dailyBudgetType"],
             'marginType': line_data["marginType"],
-            'schedule': {
-                'startDateStr': line_data["schedule"]["startDateStr"],
-                'endDateStr': line_data["schedule"]["endDateStr"],
+            # 8/22/19: schedule is currently broken in the Verizon API
+            # 'schedule': {
+                # 'startDateStr': line_data["schedule"]["startDateStr"],
+                # 'endDateStr': line_data["schedule"]["endDateStr"],
             #     'id': line_data["schedule"]["id"],
             #     'budget': line_data["schedule"]["budget"]
-            },
+            # },
             'id': line_data["id"],
             'name': line_data["name"],
             'orderId': line_data["orderId"],
