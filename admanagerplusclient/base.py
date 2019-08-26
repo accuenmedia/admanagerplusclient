@@ -26,11 +26,17 @@ class Base:
             'request_body': self.generate_curl_command(r.request.method, r.url, self.headers, data)
         }
 
-        if results_json['errors'] is not None:
+        if 'errors' in results_json and results_json['errors'] is not None:
             response_json['msg_type'] = 'error'
             response_json['msg'] = results_json['errors']
             response_json['data'] = results_json['errors']
             response_json['response_code'] = results_json['errors']['httpStatusCode']
+
+        elif 'validationMessages' in results_json:
+            response_json['msg_type'] = 'error'
+            response_json['msg'] = "Error"
+            response_json['data'] = results_json
+            response_json['response_code'] = r.status_code
 
         else:
             response_json['msg_type'] = 'success'
@@ -52,7 +58,7 @@ class Base:
 
         results_json = r.json()
 
-        if results_json['errors'] is not None:
+        if 'errors' in results_json and results_json['errors'] is not None:
             if results_json['errors']['httpStatusCode'] in [400, 401]:
                 self.connection.token = self.refresh_access_token()['access_token']
                 r = self.make_new_request(url, self.connection.token, method_type, headers, data)

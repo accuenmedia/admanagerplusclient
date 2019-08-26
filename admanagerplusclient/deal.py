@@ -25,8 +25,8 @@ class Deal(Base):
             response = json.loads(self.make_request(endpoint, self.headers, 'GET', params=params))
 
             if response.get('msg_type') == "error":
-                for error in response.get('data').get('validationErrors'):
-                    if error.get('propertyName') == "TRAFFIC_LIMIT_PER_MIN":
+                for error in response.get('data').get('validationMessages'):
+                    if error.get('propertyName') == "RPM":
                         print("")
                         print("")
                         print("")
