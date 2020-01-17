@@ -22,7 +22,18 @@ class Creative(Base):
             response = json.loads(self.make_request(endpoint, self.headers, 'GET', params=params))
 
             if response.get('msg_type') == "error":
-                for error in response.get('data').get('validationMessages'):
+                validation_messages = response.get('data').get('validationMessages', [])
+                # to check error response
+                if len(validation_messages) == 0:
+                    print("")
+                    print("")
+                    print("")
+                    print(response.get('data'))
+                    print("")
+                    print("")
+                    print("")
+
+                for error in validation_messages:
                     if error.get('propertyName') == "RPM":
                         print("")
                         print("")
