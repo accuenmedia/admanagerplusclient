@@ -28,6 +28,7 @@ class Creative(Base):
                     print("")
                     print("")
                     print("")
+                    print("Error hit but no message received")
                     print(response.get('data'))
                     print("")
                     print("")
