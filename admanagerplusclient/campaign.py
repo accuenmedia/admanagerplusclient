@@ -40,7 +40,6 @@ class Campaign(Base):
                     campaigns.append(campaign)
 
             if int(len(campaigns)) != int(expected_total):
-                print('we have ' + str(len(campaigns)))
                 break
 
         response['data'] = campaigns

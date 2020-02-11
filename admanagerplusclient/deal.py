@@ -48,7 +48,6 @@ class Deal(Base):
                         deals.append(deal)
 
             if int(len(deals)) != int(expected_total):
-                print('we have ' + str(len(deals)))
                 break
 
         response['data'] = deals

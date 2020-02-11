@@ -40,7 +40,6 @@ class LineItem(Base):
                     line_items.append(line_item)
 
             if int(len(line_items)) != int(expected_total):
-                print('we have ' + str(len(line_items)))
                 break
 
         response['data'] = line_items

@@ -40,7 +40,6 @@ class Advertiser(Base):
                     advertisers.append(advertiser)
 
             if int(len(advertisers)) != int(expected_total):
-                print('we have ' + str(len(advertisers)))
                 break
 
         response['data'] = advertisers

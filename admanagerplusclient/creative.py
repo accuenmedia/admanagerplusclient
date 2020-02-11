@@ -52,7 +52,6 @@ class Creative(Base):
                     creatives.append(creative)
 
             if int(len(creatives)) != int(expected_total):
-                print('we have ' + str(len(creatives)))
                 break
 
         response['data'] = creatives
